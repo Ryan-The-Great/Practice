@@ -88,9 +88,7 @@ namespace Practice
 
         public Node Delete(Node node, int val)
         {
-            Node target = Search(val);
-
-            i
+            throw new NotImplementedException();
            
         }
 

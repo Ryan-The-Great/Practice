@@ -1,22 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practice
 {
-    using System;
 
-    public class Program
+
+    class MainClass
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
-            //TestVarScope();
-            TestBST();
+            //BinarySearchExample();
+            //SelectionSortExample();
+            //BubbleSortExample();
+            //BSTExample();
+            VarScopeExample();
         }
 
-        public static void TestBST()
+        public static void BinarySearchExample()
+        {
+            int[] arr = { 2, 3, 4, 10, 40 };
+            int n = arr.Length;
+            int x = 41;
+
+            int result = Search.BinarySearch(arr, 0, n - 1, x);
+
+            if (result == -1)
+                Console.WriteLine("Element not present");
+            else
+                Console.WriteLine("Element found at index " + result);
+        }
+
+        public static void SelectionSortExample()
+        {
+            int[] arr = { 64, 25, 12, 22, 11 };
+            Sort.SelectionSort(arr);
+            Console.WriteLine(String.Join(",", arr));
+        }
+
+        public static void BubbleSortExample()
+        {
+            int[] arr = { 64, 25, 12, 22, 11 };
+            Sort.BubbleSort(arr);
+            Console.WriteLine(String.Join(",", arr));
+        }
+
+        public static void BSTExample()
         {
             BST bst = new BST();
 
@@ -30,7 +57,7 @@ namespace Practice
             bst.Insert(40);
             bst.InOrderTraverse();
 
-            Console.WriteLine(String.Format("50 found? {0}",  bst.Search(50)));
+            Console.WriteLine(String.Format("50 found? {0}", bst.Search(50)));
             Console.WriteLine(String.Format("50 found? {0}", bst.Search(40)));
             Console.WriteLine(String.Format("50 found? {0}", bst.Search(80)));
             Console.WriteLine(String.Format("50 found? {0}", bst.Search(100)));
@@ -38,7 +65,7 @@ namespace Practice
             Console.WriteLine(String.Format("Min value in BST is: " + bst.MinValNode().val));
         }
 
-        public static void TestVarScope()
+        public static void VarScopeExample()
         {
             VarScope.Test();
         }
