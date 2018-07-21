@@ -12,14 +12,16 @@ namespace Practice
             //SelectionSortExample();
             //BubbleSortExample();
             //BSTExample();
-            VarScopeExample();
+            //VarScopeExample();
+            //InsertionSortExample();
+            MergeSortExample();
         }
 
         public static void BinarySearchExample()
         {
             int[] arr = { 2, 3, 4, 10, 40 };
             int n = arr.Length;
-            int x = 41;
+            int x = 10;
 
             int result = Search.BinarySearch(arr, 0, n - 1, x);
 
@@ -40,6 +42,20 @@ namespace Practice
         {
             int[] arr = { 64, 25, 12, 22, 11 };
             Sort.BubbleSort(arr);
+            Console.WriteLine(String.Join(",", arr));
+        }
+
+        public static void InsertionSortExample()
+        {
+            int[] arr = { 12, 11, 13, 5, 6 };
+            Sort.InsertionSort(arr);
+            Console.WriteLine(String.Join(",", arr));
+        }
+
+        public static void MergeSortExample()
+        {
+            int[] arr = { 12, 11, 13, 5, 6, 7 };
+            Sort.MergeSort(arr, 0, arr.Length - 1);
             Console.WriteLine(String.Join(",", arr));
         }
 
