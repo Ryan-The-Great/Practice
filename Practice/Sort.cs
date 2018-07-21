@@ -66,44 +66,49 @@ namespace Practice
                 MergeSort(input, l, m);
                 MergeSort(input, m + 1, r);
 
+                Merge(input, l, m, r);
+            }
+        }
 
-                //merging
-                int nl = m - l + 1, nr = r - m;
-                int[] L = new int[nl], R = new int[nr];
+        public static void Merge(int[] input, int l, int m, int r)
+        {
+            //merging
+            int nl = m - l + 1, nr = r - m;
+            int[] L = new int[nl], R = new int[nr];
 
-                for (int i = 0; i < nl; i++){
-                    L[i] = input[l + i];
-                }
-                for (int i = 0; i < nr; i++)
-                {
-                    R[i] = input[m + i + 1];
-                }
+            for (int i = 0; i < nl; i++)
+            {
+                L[i] = input[l + i];
+            }
+            for (int i = 0; i < nr; i++)
+            {
+                R[i] = input[m + i + 1];
+            }
 
-                int li = 0, ri = 0;
+            int li = 0, ri = 0;
 
-                int ini = l;
+            int ini = l;
 
-                while (li < L.Length && ri < R.Length)
-                {
-                    if (L[li] < R[ri])
-                    {
-                        input[ini++] = L[li++];
-                    }
-                    else
-                    {
-                        input[ini++] = R[ri++];
-                    }
-                }
-
-                while(li < L.Length)
+            while (li < L.Length && ri < R.Length)
+            {
+                if (L[li] < R[ri])
                 {
                     input[ini++] = L[li++];
                 }
-
-                while(ri < R.Length)
+                else
                 {
                     input[ini++] = R[ri++];
                 }
+            }
+
+            while (li < L.Length)
+            {
+                input[ini++] = L[li++];
+            }
+
+            while (ri < R.Length)
+            {
+                input[ini++] = R[ri++];
             }
         }
 
