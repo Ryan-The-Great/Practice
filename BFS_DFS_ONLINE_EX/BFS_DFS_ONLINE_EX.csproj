@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{B3516081-2CEA-4CE3-94F0-1327BD523080}</ProjectGuid>
+    <ProjectGuid>{EEFA68E9-AA5E-42E5-9174-5F571DCE784B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Practice</RootNamespace>
-    <AssemblyName>Practice</AssemblyName>
+    <RootNamespace>BFS_DFS_ONLINE_EX</RootNamespace>
+    <AssemblyName>BFS_DFS_ONLINE_EX</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -34,13 +34,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Search.cs" />
-    <Compile Include="Sort.cs" />
-    <Compile Include="BST.cs" />
-    <Compile Include="VarScope.cs" />
-    <Compile Include="LeetArray.cs" />
-    <Compile Include="LeetString.cs" />
-    <Compile Include="LeetLinkedIn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,20 +1,109 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Practice
 {
 
+    public class ListNode {
+       public int val;
+       public ListNode next;
+       public ListNode(int x) { val = x; }
+    }
+ 
 
     class MainClass
     {
         public static void Main(string[] args)
         {
+            PaintHouse paint = new PaintHouse();
+
+            int[,] input = { { 17, 2, 17 }, { 16, 16, 5 }, { 14, 3, 19 } };
+            //int[,] input = { { 5, 8, 6},{ 19, 14, 13},{ 7, 5, 12},{ 14, 15, 17},{ 3, 20, 10} };
+            paint.MinCost(input);
+
+            //TwoSum twoSum = new TwoSum();
+            //twoSum.Add(1);
+            //twoSum.Add(3);
+            //twoSum.Add(5);
+            //twoSum.Find(4);
+            //twoSum.Find(7);
+
+            //String[] input = new string[] { "practice", "makes", "perfect", "coding", "makes" };
+            //int result = LeetString.ShortestDistance(input, "practice", "coding");
+
+            //LeetString.Reverse(-2147483648);
+
+            //int[,] matrix = new int[,]
+            //{
+            //    {1,2,3},
+            //    {4,5,6},
+            //    {7,8,9}
+            //};
+
+            //LeetArray.Rotate(matrix);
+
+
+
             //BinarySearchExample();
             //SelectionSortExample();
             //BubbleSortExample();
             //BSTExample();
             //VarScopeExample();
             //InsertionSortExample();
-            MergeSortExample();
+            //MergeSortExample();
+
+            //LeetArray.Intersect(new int[] { 1 }, new int[] { 1 });
+
+
+            //ListNode head = new ListNode(1);
+            //head.next = new ListNode(2);
+            //IsPalindrome(head);
+        }
+
+        public static bool IsPalindrome(ListNode head)
+        {
+            if (head == null || head.next == null)
+                return true;
+
+            ListNode fast = head.next, slow = head, mid = null;
+            ListNode pre = null, cur = slow, next = null;
+
+            while (fast != null)
+            {
+                if (fast.next == null) //even list
+                {
+                    mid = slow.next;
+                    fast = null;
+                }
+                else if (fast.next.next == null) //odd list
+                {
+                    mid = slow.next.next;
+                    fast = null;
+                }
+                else
+                    fast = fast.next.next;
+
+                next = slow.next;
+                slow.next = pre;
+                pre = slow;
+
+                if(fast != null)
+                    slow = next;
+            }
+
+            while (slow != null && mid != null)
+            {
+                if (slow.val != mid.val)
+                    return false;
+
+                slow = slow.next;
+                mid = mid.next;
+            }
+
+            if (slow == null && mid == null)
+                return true;
+            else
+                return false;
         }
 
         public static void BinarySearchExample()

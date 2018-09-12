@@ -70,6 +70,16 @@ namespace Practice
             }
         }
 
+        public static void QuickSort(int[] input, int l, int r)
+        {
+            
+        }
+
+        public static void Partition(int[] input)
+        {
+            
+        }
+
         public static void Merge(int[] input, int l, int m, int r)
         {
             //merging
